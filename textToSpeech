@@ -1,0 +1,11 @@
+# Text to Speech
+# This can be run in Google Collab; after importing everything it needs 9 minutes to make the audio sample
+from transformers import pipeline
+import soundfile as sf
+
+synthesizer = pipeline("text-to-speech", "suno/bark")
+
+synthesizer("Look I am generating speech in three lines of code!")
+
+output_file = "generated_speech.wav"
+sf.write(output_file, audio['audio'][0], 24000)
