@@ -1,0 +1,5 @@
+# This is a smaller model...that's why it's here because I can run it.
+
+from transformers import pipeline
+generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
+generator("EleutherAI has", do_sample=True, min_length=20)
